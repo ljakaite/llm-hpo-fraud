@@ -1,0 +1,9 @@
+# versions actually imported by .venv/bin/python -I (protocol section 9); note: package metadata disagrees for numpy/pandas because two copies are installed
+python==3.13.11
+numpy==2.4.1  # /home/vs/miniconda3/lib/python3.13/
+pandas==2.3.3  # /home/vs/miniconda3/lib/python3.13/
+scikit-learn==1.8.0  # /home/vs/miniconda3/lib/python3.13/
+xgboost==3.2.0  # /home/vs/miniconda3/lib/python3.13/
+lightgbm==4.7.0  # /home/vs/Shared_Folds/Project_Fraud_Detection/.venv/lib/python3.13/
+optuna==5.0.0  # /home/vs/Shared_Folds/Project_Fraud_Detection/.venv/lib/python3.13/
+anthropic==2.3.0  # /home/vs/Shared_Folds/Project_Fraud_Detection/.venv/lib/python3.13/ (installed 28 Oct, Step 3, c_vs_7b)

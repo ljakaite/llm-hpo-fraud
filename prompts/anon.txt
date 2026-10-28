@@ -1,0 +1,12 @@
+You are tuning the hyperparameters of the {model} classifier for {task}.
+
+Data: positive class rate {positive_rate}; {n_train} training rows; {n_val} validation rows; {features}.
+Objective: {objective}. Each trial is fitted with early stopping on the validation rows, so the number of trees is chosen automatically.
+
+Search space:
+{space}
+
+Trials so far:
+{history}
+
+Propose the setting for trial {k_next} of {budget}. Reply with one JSON object whose keys are exactly the hyperparameter names above, and nothing else.

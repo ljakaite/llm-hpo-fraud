@@ -1,0 +1,301 @@
+{
+ "C1": {
+  "ok": true,
+  "static_imports": {
+   "search.py": [],
+   "data.py": [],
+   "llm.py": [],
+   "models.py": [],
+   "space.py": []
+  },
+  "runtime": "False False",
+  "rows": {
+   "ieee": {
+    "n_train": 413378,
+    "overlap": 0,
+    "last_train_t": 10437996.0,
+    "first_test_t": 10438003.0,
+    "ok": "True"
+   },
+   "baf": {
+    "n_train": 794989,
+    "overlap": 0,
+    "last_train_t": 5.0,
+    "first_test_t": 6.0,
+    "ok": "True"
+   },
+   "ulb": {
+    "n_train": 199368,
+    "overlap": 0,
+    "last_train_t": 132929.0,
+    "first_test_t": 132930.0,
+    "ok": "True"
+   }
+  }
+ },
+ "C2": {
+  "ok": true,
+  "datasets": {
+   "ieee": {
+    "shape": [
+     413378,
+     53,
+     177162,
+     53
+    ],
+    "max_abs_diff": 0.0,
+    "nan_pattern_same": true,
+    "names_same": true,
+    "labels_same": true,
+    "ok": true
+   },
+   "baf": {
+    "shape": [
+     794989,
+     35,
+     205011,
+     35
+    ],
+    "max_abs_diff": 0.0,
+    "nan_pattern_same": true,
+    "names_same": true,
+    "labels_same": true,
+    "ok": true
+   },
+   "ulb": {
+    "shape": [
+     199368,
+     31,
+     85439,
+     31
+    ],
+    "max_abs_diff": 0.0,
+    "nan_pattern_same": true,
+    "names_same": true,
+    "labels_same": true,
+    "ok": true
+   }
+  }
+ },
+ "C3": {
+  "ok": true,
+  "synthetic_planted_category": true,
+  "real": {
+   "ieee": {
+    "invariant_to_val_labels": true,
+    "share_val_rows_encoded_differently_from_datasets_py": 1.0
+   },
+   "baf": {
+    "invariant_to_val_labels": true,
+    "share_val_rows_encoded_differently_from_datasets_py": 1.0
+   }
+  }
+ },
+ "C4": {
+  "ok": true,
+  "draws_per_arm": 1000,
+  "out_of_space": {
+   "xgb": {
+    "O1": 0,
+    "O2": 0,
+    "fallback_random": 0,
+    "llm_wild_answers_out_of_space": 0,
+    "llm_wild_answers_flagged_clipped": 1000
+   },
+   "lgbm": {
+    "O1": 0,
+    "O2": 0,
+    "fallback_random": 0,
+    "llm_wild_answers_out_of_space": 0,
+    "llm_wild_answers_flagged_clipped": 1000
+   }
+  }
+ },
+ "C5": {
+  "ok": true,
+  "cases": [
+   [
+    "plain JSON",
+    "ok",
+    true
+   ],
+   [
+    "JSON in prose and code fence",
+    "ok",
+    true
+   ],
+   [
+    "out of range",
+    "ok",
+    true
+   ],
+   [
+    "float for int",
+    "ok",
+    true
+   ],
+   [
+    "extra key",
+    "ok",
+    true
+   ],
+   [
+    "missing key",
+    "error",
+    true
+   ],
+   [
+    "no JSON",
+    "error",
+    true
+   ],
+   [
+    "broken JSON",
+    "error",
+    true
+   ],
+   [
+    "string value",
+    "error",
+    true
+   ],
+   [
+    "NaN value",
+    "error",
+    true
+   ],
+   [
+    "empty",
+    "error",
+    true
+   ],
+   [
+    "boolean value",
+    "error",
+    true
+   ]
+  ],
+  "retry_fallback_rule": true,
+  "log_and_cache": true
+ },
+ "C6": {
+  "ok": true,
+  "killed_mid_job": true,
+  "results_before_kill": 2,
+  "results_after_resume": 8,
+  "expected": 8,
+  "finished_results_not_rerun": true,
+  "all_valid": true,
+  "tmp_files_left": [],
+  "skipped_on_resume": 2
+ },
+ "C7": {
+  "ok": true,
+  "arms": 24,
+  "failed": [],
+  "score_rc": 0,
+  "bad": [],
+  "wall_s": 175.0,
+  "per_arm_s": {
+   "xgb/O0/pr_auc/time/anon": 1.8,
+   "xgb/O0/log_loss/time/anon": 1.8,
+   "xgb/O0LLM/pr_auc/time/anon": 2.6,
+   "xgb/O0LLM/pr_auc/time/named": 2.5,
+   "xgb/O1/pr_auc/time/anon": 5.4,
+   "xgb/O2/pr_auc/time/anon": 5.3,
+   "xgb/O2/log_loss/time/anon": 6.8,
+   "xgb/O2/pr_auc/random/anon": 12.4,
+   "xgb/O3/pr_auc/time/anon": 5.8,
+   "xgb/O3/log_loss/time/anon": 8.0,
+   "xgb/O3/pr_auc/time/named": 5.6,
+   "xgb/O4/pr_auc/time/anon": 6.2,
+   "lgbm/O0/pr_auc/time/anon": 1.8,
+   "lgbm/O0/log_loss/time/anon": 1.7,
+   "lgbm/O0LLM/pr_auc/time/anon": 3.5,
+   "lgbm/O0LLM/pr_auc/time/named": 3.4,
+   "lgbm/O1/pr_auc/time/anon": 13.5,
+   "lgbm/O2/pr_auc/time/anon": 13.6,
+   "lgbm/O2/log_loss/time/anon": 6.9,
+   "lgbm/O2/pr_auc/random/anon": 18.4,
+   "lgbm/O3/pr_auc/time/anon": 12.8,
+   "lgbm/O3/log_loss/time/anon": 9.8,
+   "lgbm/O3/pr_auc/time/named": 13.0,
+   "lgbm/O4/pr_auc/time/anon": 12.4
+  }
+ },
+ "C5L": {
+  "ok": true,
+  "conditions": {
+   "anon": {
+    "params_in_space": true,
+    "flags": [],
+    "calls": 1,
+    "cache_hit_on_repeat": true
+   },
+   "named": {
+    "params_in_space": true,
+    "flags": [],
+    "calls": 1,
+    "cache_hit_on_repeat": true
+   }
+  },
+  "api_calls": 2,
+  "tokens": {
+   "input": 1192,
+   "output": 194
+  },
+  "thinking_summaries": 0,
+  "usage_logged": true,
+  "refusal_rule": true
+ },
+ "C7L": {
+  "ok": true,
+  "arms": 24,
+  "failed": [],
+  "score_rc": 0,
+  "bad": [],
+  "wall_s": 324.8,
+  "per_arm_s": {
+   "xgb/O0/pr_auc/time/anon": 1.8,
+   "xgb/O0/log_loss/time/anon": 1.7,
+   "xgb/O0LLM/pr_auc/time/anon": 4.2,
+   "xgb/O0LLM/pr_auc/time/named": 4.4,
+   "xgb/O1/pr_auc/time/anon": 5.4,
+   "xgb/O2/pr_auc/time/anon": 5.3,
+   "xgb/O2/log_loss/time/anon": 6.8,
+   "xgb/O2/pr_auc/random/anon": 11.7,
+   "xgb/O3/pr_auc/time/anon": 25.2,
+   "xgb/O3/log_loss/time/anon": 31.2,
+   "xgb/O3/pr_auc/time/named": 21.0,
+   "xgb/O4/pr_auc/time/anon": 21.3,
+   "lgbm/O0/pr_auc/time/anon": 1.7,
+   "lgbm/O0/log_loss/time/anon": 1.7,
+   "lgbm/O0LLM/pr_auc/time/anon": 6.9,
+   "lgbm/O0LLM/pr_auc/time/named": 5.5,
+   "lgbm/O1/pr_auc/time/anon": 13.6,
+   "lgbm/O2/pr_auc/time/anon": 13.9,
+   "lgbm/O2/log_loss/time/anon": 7.0,
+   "lgbm/O2/pr_auc/random/anon": 17.0,
+   "lgbm/O3/pr_auc/time/anon": 29.1,
+   "lgbm/O3/log_loss/time/anon": 35.7,
+   "lgbm/O3/pr_auc/time/named": 29.6,
+   "lgbm/O4/pr_auc/time/anon": 23.1
+  },
+  "llm_calls": 56,
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "input_tokens": 38945,
+  "output_tokens": 7172,
+  "stop_reasons": {
+   "end_turn": 56
+  },
+  "with_thinking_summary": 0,
+  "flag_counts": {},
+  "anon_answers": 40,
+  "anon_identifying": 0,
+  "named_answers": 16,
+  "named_identifying": 0,
+  "answers_with_prose": 12
+ }
+}
