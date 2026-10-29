@@ -1,0 +1,87 @@
+{
+ "searches": 60,
+ "llm_calls": 688,
+ "llm_trials": 688,
+ "flag_rates": {
+  "clipped": 0.0015,
+  "duplicate": 0.0291
+ },
+ "time_per_search_s": {
+  "baf O0/log_loss/time/anon": 1.1,
+  "baf O0/pr_auc/time/anon": 1.3,
+  "baf O0LLM/pr_auc/time/anon": 5.0,
+  "baf O0LLM/pr_auc/time/named": 4.9,
+  "baf O1/log_loss/time/anon": 132.2,
+  "baf O1/pr_auc/time/anon": 140.8,
+  "baf O2/log_loss/time/anon": 212.3,
+  "baf O2/pr_auc/random/anon": 275.5,
+  "baf O2/pr_auc/time/anon": 282.9,
+  "baf O3/log_loss/time/anon": 539.7,
+  "baf O3/pr_auc/time/anon": 358.4,
+  "baf O3/pr_auc/time/anon/haiku": 286.1,
+  "baf O3/pr_auc/time/named": 384.0,
+  "baf O4/log_loss/time/anon": 260.5,
+  "baf O4/pr_auc/time/anon": 263.0,
+  "ulb O0/log_loss/time/anon": 0.5,
+  "ulb O0/pr_auc/time/anon": 0.5,
+  "ulb O0LLM/pr_auc/time/anon": 3.1,
+  "ulb O0LLM/pr_auc/time/named": 3.0,
+  "ulb O1/log_loss/time/anon": 27.2,
+  "ulb O1/pr_auc/time/anon": 21.8,
+  "ulb O2/log_loss/time/anon": 47.4,
+  "ulb O2/pr_auc/random/anon": 27.7,
+  "ulb O2/pr_auc/time/anon": 29.3,
+  "ulb O3/log_loss/time/anon": 201.9,
+  "ulb O3/pr_auc/time/anon": 130.1,
+  "ulb O3/pr_auc/time/anon/haiku": 174.8,
+  "ulb O3/pr_auc/time/named": 110.6,
+  "ulb O4/log_loss/time/anon": 91.0,
+  "ulb O4/pr_auc/time/anon": 52.1
+ },
+ "tokens_per_unit": {
+  "O0LLM/any/opus": {
+   "n": 8,
+   "input": 506,
+   "output": 97,
+   "usd": 0.004
+  },
+  "O3/anon/haiku": {
+   "n": 4,
+   "input": 104309,
+   "output": 15136,
+   "usd": 0.018
+  },
+  "O3/anon/opus": {
+   "n": 8,
+   "input": 104710,
+   "output": 5945,
+   "usd": 0.5377
+  },
+  "O3/named/opus": {
+   "n": 4,
+   "input": 113729,
+   "output": 5598,
+   "usd": 0.5669
+  },
+  "O4/anon/opus": {
+   "n": 8,
+   "input": 3083,
+   "output": 644,
+   "usd": 0.0252
+  }
+ },
+ "projected_cost_usd": {
+  "plan_F": 103.12,
+  "plan_R": 69.35,
+  "missing_units": []
+ },
+ "stop_rule": {
+  "threshold_usd": 230.0,
+  "decision": "Plan F"
+ },
+ "manipulation_check": {
+  "anon/haiku/not": 160,
+  "anon/opus/not": 364,
+  "named/opus/not": 164
+ }
+}

@@ -1,4 +1,4 @@
-Oct 28, 2026. v0.10, SIGNED OFF by LJ and VS (28 Oct), not yet frozen: the pilot (§11) runs next, then the freeze (§14). v0.2 (27 Oct): P1–P3 and V3 decided; code written and checks C1–C7 passed (c_vs_2); §4, §5 and §10 updated to match the code. v0.3 (28 Oct): D2 = A, scope statement in §1, limitation in §8, scope references in §15; no new arm (c_vs_3, c_vs_4). v0.4 (28 Oct): D1 decided (10 TPE start-up trials in O2 and O4); R3 and R4 verified and the §1 wording narrowed to what R3 shows; LLM-call count corrected in §7 (c_vs_5, c_vs_6). v0.5 (28 Oct): V4a decided, primary LLM Claude Opus 5.5 at effort `low`, with the settings it requires (§5; P2 revised: no temperature); cost stop rule with Plans F and R (§7, §11) (c_vs_7, c_vs_7a, c_vs_7b). v0.6 (28 Oct): V5 (c), banded data description in both prompts and a manipulation check for H4 (§5, §6, §8); Claude adapter and live checks C5L, C7L (§10) (c_vs_8). v0.7 (28 Oct): V4b decided, Claude Haiku 5.5 as the S3 arm, block B7 (§5, §7, §8). v0.8 (28 Oct): authorship and roles revised, with LJ as first and corresponding author and VS acknowledged; repository on LJ's GitHub account (People, §9, §12–§14; c_vs_9). v0.9 (28 Oct): VS restored as co-author, last author after the students; repository unchanged (People; c_vs_10). v0.10 (28 Oct): signed off by LJ (reported by VS) and VS; V4d settled (no prompt caching); committed to the repository before the pilot under the tag `protocol-signed` (c_vs_12).
+Oct 29, 2026. **v1.0, FROZEN on 29 Oct 2026** after the pilot (§11, §14). From now on, every change is a dated deviation (§12). v0.2 (27 Oct): P1–P3 and V3 decided; code written and checks C1–C7 passed (c_vs_2); §4, §5 and §10 updated to match the code. v0.3 (28 Oct): D2 = A, scope statement in §1, limitation in §8, scope references in §15; no new arm (c_vs_3, c_vs_4). v0.4 (28 Oct): D1 decided (10 TPE start-up trials in O2 and O4); R3 and R4 verified and the §1 wording narrowed to what R3 shows; LLM-call count corrected in §7 (c_vs_5, c_vs_6). v0.5 (28 Oct): V4a decided, primary LLM Claude Opus 5.5 at effort `low`, with the settings it requires (§5; P2 revised: no temperature); cost stop rule with Plans F and R (§7, §11) (c_vs_7, c_vs_7a, c_vs_7b). v0.6 (28 Oct): V5 (c), banded data description in both prompts and a manipulation check for H4 (§5, §6, §8); Claude adapter and live checks C5L, C7L (§10) (c_vs_8). v0.7 (28 Oct): V4b decided, Claude Haiku 5.5 as the S3 arm, block B7 (§5, §7, §8). v0.8 (28 Oct): authorship and roles revised, with LJ as first and corresponding author and VS acknowledged; repository on LJ's GitHub account (People, §9, §12–§14; c_vs_9). v0.9 (28 Oct): VS restored as co-author, last author after the students; repository unchanged (People; c_vs_10). v0.10 (28 Oct): signed off by LJ (reported by VS) and VS; V4d settled (no prompt caching); committed to the repository before the pilot under the tag `protocol-signed` (c_vs_12). v1.0 (29 Oct): pilot run (60 searches, no failures), no amendments needed, stop rule: Plan F; frozen and tagged `protocol-freeze` (c_vs_12).
 
 # Protocol: LLM-guided hyperparameter optimisation for fraud detectors on out-of-time benchmarks
 
@@ -281,6 +281,15 @@ This revises c_vs_1 §5.6 (660 searches). The B3 log-loss arm is dropped, becaus
 - **What it may not change:** the hypotheses, the thresholds, the arms (apart from the pre-specified switch from Plan F to Plan R), the datasets, the outcomes, the model or its settings (§5).
 - **Pilot report:** time per search per cell, tokens per call (input, output and thinking, from `usage`), parse and fallback rates, the projected LLM cost of Plan F and Plan R, and the stop-rule decision. Test scores of pilot runs are not computed, so that they cannot steer the protocol.
 
+**Pilot results (28–29 Oct 2026; `protocol/pilot_report.json`, script `pilot_report.py`).**
+- **Runs:** 60 searches (ULB and BAF, XGBoost, r = 90, 91, all arms including B7), 2.3 hours, no failed jobs. 688 LLM calls (LLM access 28 Oct 23:17 to 29 Oct 00:54), all with `stop_reason` `end_turn`.
+- **Flags:** no refusals, retries or fallbacks; `clipped` 0.15% and `duplicate` 2.9% of LLM trials.
+- **Tokens per 40-trial O3 search:** Opus 5.5 about 105,000 input and 5,900 output (anonymised), about $0.54; Haiku 5.5 about 104,000 input and 15,000 output, about $0.02.
+- **Projected LLM cost:** Plan F USD 103, Plan R USD 69. **Stop rule: Plan F** (threshold USD 230).
+- **Time per search:** up to 540 s (BAF, O3, log loss), far below the 4-hour limit. Projected main-run compute is about 2–3 days sequential; it is not a reason to change §7.
+- **Manipulation check:** 0 of 524 anonymised answers (364 Opus, 160 Haiku, text and thinking summaries) identify the data.
+- **Amendments arising from the pilot: none.** The prompt wording, time limit, retry rule and run budget are unchanged.
+
 ## 12. Deviations
 
 After the freeze, any change is entered in `deviations.md` with:
@@ -309,12 +318,12 @@ The paper reports every deviation. If the hosted LLM becomes unavailable before 
 
 | Field | Value |
 |---|---|
-| Frozen on | [ ] |
-| sha256 of this file | [ ] |
-| Code commit | [ ] (first commit 9b53c61; the freeze commit is tagged `protocol-freeze`) |
-| Hosted LLM identifier and provider | `claude-opus-5-5`, Anthropic (Claude API); `anthropic` SDK version [ ]; API version [ ]; access dates [ ] |
-| Stop-rule decision (§7) | Plan [F/R]; projected cost USD [ ]; award £[ ] |
-| Approved by | LJ [x] and VS [x] (sign-off of v0.10, 28 Oct); freeze approval after the pilot: LJ [ ] VS [ ] |
+| Frozen on | 29 Oct 2026 |
+| sha256 of this file | Recorded in `protocol/FROZEN.sha256` and in the message of the tag `protocol-freeze`; a file cannot contain its own hash |
+| Code commit | The commit tagged `protocol-freeze` on `main` (first commit 9b53c61; signed protocol 25c3fb0, tag `protocol-signed`) |
+| Hosted LLM identifier and provider | `claude-opus-5-5`, Anthropic (Claude API); `anthropic` SDK version 2.3.0; API version 2026-10-21; access dates: pilot 28–29 Oct 2026, main runs [recorded at completion] |
+| Stop-rule decision (§7) | **Plan F**; projected cost USD 103.12 (Plan R USD 69.35); threshold USD 230 (the rule for a £200 award; the iACE award is still pending, and if it is below £200 the 90% rule is re-applied before the LLM blocks start) |
+| Approved by | LJ [x] and VS [x] (sign-off of v0.10, 28 Oct); freeze approval after the pilot: LJ [x] VS [x] (VS's instruction of 28 Oct to freeze after LJ's sign-off; no amendments arose) |
 
 ## 15. References for the scope statement (§1)
 
