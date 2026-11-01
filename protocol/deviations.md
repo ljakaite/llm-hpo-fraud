@@ -49,3 +49,12 @@ These change no hypothesis, threshold, arm or outcome of the frozen protocol. Th
 - **(b) Ridge strength in the data.** Within-pair correlation among the top 25% of O1 trials for the pairs (log learning rate, log trees chosen), (depth or log `num_leaves`, log `min_child_weight` or log `min_child_samples`) and (`subsample`, `colsample_bytree`).
 - **(c) Ridge coherence of each optimiser.** The mean |within-pair correlation| of trials 21–40 for the same pairs, for O1, O2, O3 (Opus), O3 (Haiku) and O4. The simulation's reference values: 0.2–0.3 for the classical optimisers, against a true ridge of 0.83.
 - **1 Nov 2026, test scoring completed** (`score.py`, 31 Oct 23:39 to about 14:00 on 1 Nov): 900/900 files. The pre-registered analysis was run with `analysis/h1_h5.py` (bootstrap seed 20261103, 10,000 resamples). S1 is identical to the primary analysis, because no trial was flagged `fallback`.
+
+## Post-hoc exploratory analyses (declared AFTER the test results were seen; reported as such)
+
+- **1 Nov 2026, the mechanism behind H5** (`analysis/h5_mechanism.py`). Descriptive only, prompted by the reversed H5 result:
+  - fold sizes, frauds, fraud rates and time spans;
+  - settings selected by O2 under each fold;
+  - Spearman correlation between log final trees and test PR-AUC.
+  
+  It does not change the H5 verdict, which is reported as pre-registered ("not supported", reversed on IEEE-CIS).
