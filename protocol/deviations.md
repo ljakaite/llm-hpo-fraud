@@ -9,7 +9,7 @@ Every change after the freeze is entered here with its date, what changed and wh
   - *Replacement.* Spearman correlation across the k = 40 incumbents of all PR-AUC, time-fold searches of O1–O4 in each cell (n = 60 per cell), and a scatter of the incumbents at k = 5, 10, 20 and 40.
   - *Why.* Scoring all 26,400 trials would take an estimated 130 hours of refits.
   - *Results seen.* Test scores of the incumbents existed when the replacement was chosen; no hypothesis or threshold is affected.
-  - *Approved by:* VS (with LJ); to confirm.
+  - *Approved by:* VS, 1 Nov 2026 (confirmed).
 
 ## Notes (clarifications, not deviations)
 
@@ -58,3 +58,4 @@ These change no hypothesis, threshold, arm or outcome of the frozen protocol. Th
   - Spearman correlation between log final trees and test PR-AUC.
   
   It does not change the H5 verdict, which is reported as pre-registered ("not supported", reversed on IEEE-CIS).
+- **1 Nov 2026, reporting decisions for H5** (VS). H5-a: H5 stays in the hypothesis table with its pre-registered verdict ("not supported; reversed on IEEE-CIS"). H5-b: the post-hoc mechanism analysis is reported in the exploratory section, labelled post hoc. H5-c (an extra figure): not adopted.
