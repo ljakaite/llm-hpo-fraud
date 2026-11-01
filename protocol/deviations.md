@@ -59,3 +59,5 @@ These change no hypothesis, threshold, arm or outcome of the frozen protocol. Th
   
   It does not change the H5 verdict, which is reported as pre-registered ("not supported", reversed on IEEE-CIS).
 - **1 Nov 2026, reporting decisions for H5** (VS). H5-a: H5 stays in the hypothesis table with its pre-registered verdict ("not supported; reversed on IEEE-CIS"). H5-b: the post-hoc mechanism analysis is reported in the exploratory section, labelled post hoc. H5-c (an extra figure): not adopted.
+- **1 Nov 2026, supplementary p-values** (`analysis/pvalues.py`, added after the results; not pre-registered). Two-sided permutation tests of the difference in medians per cell (10,000 relabellings, seed 20261108), and exact binomial tests for T6. They are reported in the manuscript beside the pre-registered bootstrap intervals and count rules, which remain the basis of the verdicts.
+- **1 Nov 2026, author change (no design change).** Pawanpreet Kaur is replaced by Courage Mabani as an author (VS). Protocol §13 P1 named roles only; the holder of role B changes accordingly.
