@@ -4,7 +4,12 @@ Every change after the freeze is entered here with its date, what changed and wh
 
 ## Deviations
 
-None.
+- **D1 (1 Nov 2026), validation-test secondary outcome and Figure 3.**
+  - *What changed.* §6 lists "Spearman correlation between validation and test score across the 40 trials of each search", and §8 a "validation-against-test scatter (all trials)". `score.py` (frozen code, §4) scores only the incumbents at k = 5, 10, 20 and 40, so trial-level test scores do not exist.
+  - *Replacement.* Spearman correlation across the k = 40 incumbents of all PR-AUC, time-fold searches of O1–O4 in each cell (n = 60 per cell), and a scatter of the incumbents at k = 5, 10, 20 and 40.
+  - *Why.* Scoring all 26,400 trials would take an estimated 130 hours of refits.
+  - *Results seen.* Test scores of the incumbents existed when the replacement was chosen; no hypothesis or threshold is affected.
+  - *Approved by:* VS (with LJ); to confirm.
 
 ## Notes (clarifications, not deviations)
 
@@ -43,3 +48,4 @@ These change no hypothesis, threshold, arm or outcome of the frozen protocol. Th
 - **(a) Interactions.** Per cell, pooling the O1 (random search) PR-AUC trials of all 10 repeats (400 trials), report the 5-fold cross-validated R² of validation PR-AUC on the hyperparameters: main effects plus squares, versus also all pairwise interactions (ridge regression on standardised log/linear parameters), and a random forest.
 - **(b) Ridge strength in the data.** Within-pair correlation among the top 25% of O1 trials for the pairs (log learning rate, log trees chosen), (depth or log `num_leaves`, log `min_child_weight` or log `min_child_samples`) and (`subsample`, `colsample_bytree`).
 - **(c) Ridge coherence of each optimiser.** The mean |within-pair correlation| of trials 21–40 for the same pairs, for O1, O2, O3 (Opus), O3 (Haiku) and O4. The simulation's reference values: 0.2–0.3 for the classical optimisers, against a true ridge of 0.83.
+- **1 Nov 2026, test scoring completed** (`score.py`, 31 Oct 23:39 to about 14:00 on 1 Nov): 900/900 files. The pre-registered analysis was run with `analysis/h1_h5.py` (bootstrap seed 20261103, 10,000 resamples). S1 is identical to the primary analysis, because no trial was flagged `fallback`.
